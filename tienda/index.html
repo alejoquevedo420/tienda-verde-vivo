@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wolkins GreenHouse | Cultivo Indoor, Vaporizadores y Parafernalia</title>
+<meta name="description" content="Wolkins GreenHouse: tu tienda online de growshop con paneles LED, carpas indoor, nutrientes, vaporizadores, picadores y parafernalia. Envios a todo el pais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  Envio GRATIS en compras desde $40.000 | 3 y 6 cuotas sin interes | Atencion por WhatsApp
+</div>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="#" class="logo">Wolkins<span>Green</span></a>
+    <nav class="nav" id="nav">
+      <a href="#categorias">Categorias</a>
+      <a href="#productos">Productos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#blog">Blog</a>
+      <a href="#faq">Ayuda</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Buscar">&#128269;</button>
+      <button class="icon-btn cart-btn" id="cartToggle" aria-label="Carrito">
+        &#128722; <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="icon-btn menu-btn" id="menuToggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+  <div class="search-bar" id="searchBar">
+    <div class="container">
+      <input type="text" id="searchInput" placeholder="Buscar: carpa, bong, nutrientes, picador...">
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <span class="hero-badge">Tu growshop online de confianza</span>
+      <h1>Todo para tu cultivo, en un solo lugar</h1>
+      <p>Carpas indoor, nutrientes, iluminacion LED, vaporizadores, picadores y parafernalia premium. Envios a todo el pais con total discrecion.</p>
+      <div class="hero-cta">
+        <a href="#productos" class="btn btn-primary">Ver productos</a>
+        <a href="#categorias" class="btn btn-ghost">Explorar categorias</a>
+      </div>
+      <div class="hero-trust">
+        <span>&#11088; 4.9/5 · +2.000 clientes</span>
+        <span>&#128274; Pago seguro</span>
+        <span>&#128666; Envio 24/48h</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-promo">
+        <span class="off">-25%</span>
+        <h3>Kit Iniciacion Indoor</h3>
+        <p>Carpa + iluminacion + nutrientes + control de clima</p>
+        <a href="#productos" class="btn btn-primary btn-sm">Ver oferta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits" id="beneficios">
+  <div class="container benefits-grid">
+    <div class="benefit"><span>&#128666;</span><div><strong>Envio a todo el pais</strong><p>Gratis desde $40.000</p></div></div>
+    <div class="benefit"><span>&#128274;</span><div><strong>Empaque discreto</strong><p>Sin referencias al contenido</p></div></div>
+    <div class="benefit"><span>&#8617;&#65039;</span><div><strong>Devolucion 30 dias</strong><p>Sin preguntas</p></div></div>
+    <div class="benefit"><span>&#128172;</span><div><strong>Asesoramiento</strong><p>Expertos en cultivo indoor</p></div></div>
+  </div>
+</section>
+
+<section class="section" id="categorias">
+  <div class="container">
+    <h2 class="section-title">Categorias</h2>
+    <p class="section-sub">Explora nuestra seleccion completa de productos</p>
+    <div class="cat-grid" id="catGrid">
+      <button class="cat-card" data-cat="todos">&#127760;<span>Todos</span></button>
+      <button class="cat-card" data-cat="fertilizantes">&#127807;<span>Fertilizantes</span></button>
+      <button class="cat-card" data-cat="carpas">&#9978;&#65039;<span>Carpas Indoor</span></button>
+      <button class="cat-card" data-cat="bongs">&#128309;<span>Pipas y Bongs</span></button>
+      <button class="cat-card" data-cat="picadores">&#9881;&#65039;<span>Picadores</span></button>
+      <button class="cat-card" data-cat="clima">&#127789;&#65039;<span>Clima</span></button>
+      <button class="cat-card" data-cat="sustratos">&#127796;<span>Sustratos</span></button>
+      <button class="cat-card" data-cat="herramientas">&#128296;<span>Herramientas</span></button>
+      <button class="cat-card" data-cat="extracciones">&#128293;<span>Extracciones</span></button>
+      <button class="cat-card" data-cat="iluminacion">&#128161;<span>Iluminacion</span></button>
+      <button class="cat-card" data-cat="papeles">&#128196;<span>Papeles</span></button>
+      <button class="cat-card" data-cat="parafernalia">&#127811;<span>Parafernalia</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="productos">
+  <div class="container">
+    <div class="products-head">
+      <div>
+        <h2 class="section-title">Nuestros productos</h2>
+        <p class="section-sub" id="resultCount"></p>
+      </div>
+      <select id="sortSelect" class="sort-select">
+        <option value="destacados">Destacados</option>
+        <option value="precio-asc">Precio: menor a mayor</option>
+        <option value="precio-desc">Precio: mayor a menor</option>
+      </select>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+    <p class="no-results" id="noResults" hidden>No encontramos productos. Proba con otra busqueda.</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2>No saber que necesitas para empezar?</h2>
+      <p>Te armamos un kit a medida segun tu espacio y presupuesto.</p>
+    </div>
+    <a href="https://wa.me/5490000000000" target="_blank" class="btn btn-light">&#128172; Consultar por WhatsApp</a>
+  </div>
+</section>
+
+<section class="section nosotros-section" id="nosotros">
+  <div class="container">
+    <div class="nosotros-inner">
+      <div class="nosotros-text">
+        <span class="hero-badge">Quienes somos</span>
+        <h2 class="section-title">Wolkins GreenHouse</h2>
+        <p class="nosotros-lead">Somos una tienda especializada en nutricion vegetal para cultivos de intensivos, apasionados por el arte del cultivo en todas sus formas.</p>
+        <p class="nosotros-body">Fundada con pasion y amor por la cultura del cultivo, Wolkins GreenHouse nace del deseo de ofrecer los mejores productos para cultivadores de todos los niveles. Trabajamos con las marcas mas reconocidas del mercado local e internacional, garantizando calidad en cada producto que ofrecemos.</p>
+        <p class="nosotros-body">Nuestro equipo de expertos conoce de primera mano las necesidades de cada etapa del cultivo, desde la germinacion hasta la cosecha. Por eso asesoramos a cada cliente de manera personalizada para que obtenga los mejores resultados posibles.</p>
+        <div class="nosotros-stats">
+          <div class="stat-item"><strong>+2.000</strong><span>Clientes satisfechos</span></div>
+          <div class="stat-item"><strong>+700</strong><span>Productos disponibles</span></div>
+          <div class="stat-item"><strong>100%</strong><span>Envios discretos</span></div>
+          <div class="stat-item"><strong>24/7</strong><span>Soporte WhatsApp</span></div>
+        </div>
+      </div>
+      <div class="nosotros-valores">
+        <h3>Nuestros valores</h3>
+        <div class="valor-card">
+          <span class="valor-icon">&#127807;</span>
+          <div>
+            <strong>Pasion por el cultivo</strong>
+            <p>Amamos lo que hacemos. Cada producto que ofrecemos lo conocemos en profundidad.</p>
+          </div>
+        </div>
+        <div class="valor-card">
+          <span class="valor-icon">&#11088;</span>
+          <div>
+            <strong>Calidad garantizada</strong>
+            <p>Solo trabajamos con marcas y productos verificados. Tu experiencia es nuestra prioridad.</p>
+          </div>
+        </div>
+        <div class="valor-card">
+          <span class="valor-icon">&#128274;</span>
+          <div>
+            <strong>Discrecion total</strong>
+            <p>Todos nuestros envios son anonimos, sin referencias al contenido en el empaque exterior.</p>
+          </div>
+        </div>
+        <div class="valor-card">
+          <span class="valor-icon">&#128172;</span>
+          <div>
+            <strong>Asesoramiento real</strong>
+            <p>Nuestro equipo esta disponible para responder todas tus consultas antes y despues de la compra.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section blog-section" id="blog">
+  <div class="container">
+    <h2 class="section-title">Blog y Guias</h2>
+    <p class="section-sub">Aprende a optimizar tu cultivo con nuestros articulos</p>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-img">&#128161;</div>
+        <div class="blog-body">
+          <span class="blog-tag">Iluminacion</span>
+          <h3>Como elegir el panel LED ideal para tu indoor</h3>
+          <p>Aprende las diferencias entre Full Spectrum, QB y COB. Calculamos los watts necesarios segun el tamano de tu carpa y te recomendamos las mejores opciones del mercado argentino para cada presupuesto.</p>
+          <a href="https://wa.me/5490000000000" class="blog-link" target="_blank">Consultar &#8594;</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-img">&#127807;</div>
+        <div class="blog-body">
+          <span class="blog-tag">Nutricion</span>
+          <h3>Guia completa de fertilizacion: vege vs floracion</h3>
+          <p>Entende como cambian las necesidades nutricionales de tus plantas en cada etapa. Comparamos las principales marcas disponibles y explicamos como armar tu propio programa de nutricion paso a paso.</p>
+          <a href="https://wa.me/5490000000000" class="blog-link" target="_blank">Consultar &#8594;</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-img">&#127789;&#65039;</div>
+        <div class="blog-body">
+          <span class="blog-tag">Clima</span>
+          <h3>Control de temperatura y humedad en el indoor</h3>
+          <p>Los parametros ideales de temperatura y humedad para cada etapa del cultivo. Como configurar tu sistema de extraccion, ventilacion y humidificacion para mantener las condiciones perfectas durante todo el ciclo.</p>
+          <a href="https://wa.me/5490000000000" class="blog-link" target="_blank">Consultar &#8594;</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-img">&#127796;</div>
+        <div class="blog-body">
+          <span class="blog-tag">Sustratos</span>
+          <h3>Tierra vs coco vs hidroponia: cual elegir</h3>
+          <p>Analizamos los tres sistemas de cultivo mas populares, sus ventajas, desventajas y que equipamiento necesita cada uno. Desde el cultivador principiante hasta el productor avanzado encontrara su respuesta aqui.</p>
+          <a href="https://wa.me/5490000000000" class="blog-link" target="_blank">Consultar &#8594;</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container narrow">
+    <h2 class="section-title">Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>Hacen envios a todo el pais?</summary><p>Si, enviamos a todo el pais en 24/48h habiles. Envio gratis en compras desde $40.000. Trabajamos con correo y empresas de mensajeria privada.</p></details>
+      <details><summary>El empaque es discreto?</summary><p>Si, todos nuestros envios son 100% discretos y anonimos. El paquete externo no tiene ninguna referencia al contenido ni a Wolkins GreenHouse.</p></details>
+      <details><summary>Que medios de pago aceptan?</summary><p>Aceptamos tarjetas de credito y debito (3 y 6 cuotas sin interes), transferencia bancaria, mercado pago y billeteras virtuales.</p></details>
+      <details><summary>Puedo devolver un producto?</summary><p>Si, tenes 30 dias para devoluciones. El producto debe estar sin uso y en su empaque original. Consultar condiciones por WhatsApp.</p></details>
+      <details><summary>Ofrecen garantia en productos electronicos?</summary><p>Si, todos los productos electronicos (termohigrometros, medidores, etc.) tienen garantia del fabricante. En caso de falla nos ponemos en contacto directamente.</p></details>
+      <details><summary>Hacen asesoramiento para armar un kit completo?</summary><p>Claro que si! Escribinos por WhatsApp con las medidas de tu espacio y presupuesto y te armamos el kit ideal para tu caso especifico.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="contacto">
+  <div class="container footer-grid">
+    <div>
+      <a href="#" class="logo">Wolkins<span>Green</span></a>
+      <p class="footer-desc">Tu growshop online de confianza. Cultivo indoor, vaporizadores, nutrientes y parafernalia premium con envios a todo el pais.</p>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+    <div>
+      <h4>Tienda</h4>
+      <a href="#categorias">Categorias</a>
+      <a href="#productos">Productos</a>
+      <a href="#productos">Ofertas</a>
+      <a href="#nosotros">Nosotros</a>
+    </div>
+    <div>
+      <h4>Ayuda</h4>
+      <a href="#faq">Envios</a>
+      <a href="#faq">Devoluciones</a>
+      <a href="#faq">Preguntas frecuentes</a>
+      <a href="#blog">Blog</a>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <a href="https://wa.me/5490000000000" target="_blank">WhatsApp</a>
+      <a href="mailto:hola@wolkinsgreenhouse.com">hola@wolkinsgreenhouse.com</a>
+      <p style="color:var(--muted);font-size:.85rem;margin-top:10px">Atencion: Lun-Sab 9-20hs</p>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>&copy; 2026 Wolkins GreenHouse. Venta exclusiva a mayores de 18 anos.</p>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Tu carrito</h3>
+    <button class="icon-btn" id="cartClose">&#10005;</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">$0</strong></div>
+    <a href="https://wa.me/5490000000000" target="_blank" class="btn btn-primary btn-block">Finalizar pedido por WhatsApp</a>
+    <p class="cart-note">Envio gratis desde $40.000</p>
+  </div>
+</aside>
+
+<script src="app.js"></script>
+</body>
+</html>
