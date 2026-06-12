@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Verde Vivo Growshop | Cultivo, Vaporizadores y Parafernalia</title>
+<title>Wolkins GreenHouse | Cultivo, Vaporizadores y Parafernalia</title>
 <meta name="description" content="Growshop online: paneles LED, vaporizadores, nutrientes, parafernalia y herramientas de cultivo. Envíos a todo el país, pago seguro y asesoramiento experto.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<!-- Barra superior de oferta -->
+<!-- Barra superior -->
 <div class="topbar">
   🌱 Envío GRATIS en compras desde $40.000 · 3 y 6 cuotas sin interés · Atención por WhatsApp
 </div>
@@ -19,12 +19,13 @@
 <!-- Header -->
 <header class="header">
   <div class="container header-inner">
-    <a href="#" class="logo">Verde<span>Vivo</span></a>
+    <a href="index.html" class="logo">Wolkins<span>GreenHouse</span></a>
 
     <nav class="nav" id="nav">
       <a href="#categorias">Categorías</a>
       <a href="#productos">Productos</a>
-      <a href="#beneficios">Por qué comprarnos</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="blog.html">Blog</a>
       <a href="#faq">Ayuda</a>
       <a href="#contacto">Contacto</a>
     </nav>
@@ -38,7 +39,6 @@
     </div>
   </div>
 
-  <!-- Buscador -->
   <div class="search-bar" id="searchBar">
     <div class="container">
       <input type="text" id="searchInput" placeholder="Buscar productos: vaporizador, panel LED, nutrientes...">
@@ -52,10 +52,10 @@
     <div class="hero-text">
       <span class="hero-badge">Growshop #1 en cultivo y parafernalia</span>
       <h1>Todo para tu cultivo, en un solo lugar</h1>
-      <p>Paneles LED, vaporizadores, nutrientes, herramientas y parafernalia premium. Envíos a todo el país, pago 100% seguro y asesoramiento de expertos.</p>
+      <p>+700 productos: paneles LED, vaporizadores, nutrientes, sustratos, herramientas y parafernalia premium. Envíos a todo el país y asesoramiento de expertos.</p>
       <div class="hero-cta">
         <a href="#productos" class="btn btn-primary">Ver productos</a>
-        <a href="#categorias" class="btn btn-ghost">Explorar categorías</a>
+        <a href="nosotros.html" class="btn btn-ghost">Conocé nuestro equipo</a>
       </div>
       <div class="hero-trust">
         <span>⭐ 4.9/5 · +2.000 clientes</span>
@@ -74,7 +74,7 @@
   </div>
 </section>
 
-<!-- Barra de beneficios -->
+<!-- Beneficios -->
 <section class="benefits" id="beneficios">
   <div class="container benefits-grid">
     <div class="benefit"><span>🚚</span><div><strong>Envío a todo el país</strong><p>Gratis desde $40.000</p></div></div>
@@ -88,15 +88,21 @@
 <section class="section" id="categorias">
   <div class="container">
     <h2 class="section-title">Categorías</h2>
-    <p class="section-sub">Encontrá lo que buscás más rápido</p>
+    <p class="section-sub">Explorá nuestros +700 productos</p>
     <div class="cat-grid" id="catGrid">
-      <button class="cat-card" data-cat="todos">🌐<span>Todos</span></button>
-      <button class="cat-card" data-cat="iluminacion">💡<span>Iluminación LED</span></button>
+      <button class="cat-card active" data-cat="todos">🌐<span>Todos</span></button>
+      <button class="cat-card" data-cat="fertilizantes">🧪<span>Fertilizantes</span></button>
+      <button class="cat-card" data-cat="papeles">📄<span>Papeles</span></button>
+      <button class="cat-card" data-cat="sustratos">🪴<span>Sustratos</span></button>
+      <button class="cat-card" data-cat="pipas">💨<span>Pipas y Bongs</span></button>
+      <button class="cat-card" data-cat="picadores">⚙️<span>Picadores</span></button>
+      <button class="cat-card" data-cat="herramientas">✂️<span>Herramientas</span></button>
+      <button class="cat-card" data-cat="clima">🌀<span>Clima</span></button>
+      <button class="cat-card" data-cat="extracciones">🔥<span>Extracciones</span></button>
+      <button class="cat-card" data-cat="iluminacion">💡<span>Iluminación</span></button>
       <button class="cat-card" data-cat="vaporizadores">🌬️<span>Vaporizadores</span></button>
-      <button class="cat-card" data-cat="nutrientes">🧪<span>Nutrientes</span></button>
       <button class="cat-card" data-cat="parafernalia">🍃<span>Parafernalia</span></button>
-      <button class="cat-card" data-cat="clima">🌡️<span>Control de clima</span></button>
-      <button class="cat-card" data-cat="herramientas">🛠️<span>Herramientas</span></button>
+      <button class="cat-card" data-cat="carpas">⛺<span>Carpas</span></button>
     </div>
   </div>
 </section>
@@ -106,17 +112,20 @@
   <div class="container">
     <div class="products-head">
       <div>
-        <h2 class="section-title">Productos destacados</h2>
+        <h2 class="section-title">Productos</h2>
         <p class="section-sub" id="resultCount"></p>
       </div>
       <select id="sortSelect" class="sort-select">
         <option value="destacados">Ordenar: Destacados</option>
         <option value="precio-asc">Precio: menor a mayor</option>
         <option value="precio-desc">Precio: mayor a menor</option>
+        <option value="nombre">Nombre A–Z</option>
       </select>
     </div>
     <div class="product-grid" id="productGrid"></div>
     <p class="no-results" id="noResults" hidden>No encontramos productos. Probá con otra búsqueda.</p>
+    <!-- Paginación -->
+    <div class="pagination" id="pagination"></div>
   </div>
 </section>
 
@@ -141,6 +150,7 @@
       <details><summary>¿Qué medios de pago aceptan?</summary><p>Tarjetas de crédito/débito (3 y 6 cuotas sin interés), transferencia y billeteras virtuales.</p></details>
       <details><summary>¿Puedo devolver un producto?</summary><p>Sí, tenés 30 días para devoluciones. El producto debe estar sin uso y en su empaque original.</p></details>
       <details><summary>¿Ofrecen garantía?</summary><p>Todos los productos electrónicos tienen garantía oficial del fabricante.</p></details>
+      <details><summary>¿Cuántos productos tienen disponibles?</summary><p>Contamos con más de 700 productos en stock entre fertilizantes, sustratos, iluminación, vaporizadores, parafernalia y mucho más.</p></details>
     </div>
   </div>
 </section>
@@ -149,7 +159,7 @@
 <footer class="footer" id="contacto">
   <div class="container footer-grid">
     <div>
-      <a href="#" class="logo">Verde<span>Vivo</span></a>
+      <a href="index.html" class="logo">Wolkins<span>GreenHouse</span></a>
       <p class="footer-desc">Tu growshop de confianza. Cultivo, vaporizadores y parafernalia premium con envíos a todo el país.</p>
     </div>
     <div>
@@ -159,20 +169,20 @@
       <a href="#productos">Ofertas</a>
     </div>
     <div>
-      <h4>Ayuda</h4>
-      <a href="#faq">Envíos</a>
-      <a href="#faq">Devoluciones</a>
+      <h4>Empresa</h4>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="blog.html">Blog</a>
       <a href="#faq">Preguntas frecuentes</a>
     </div>
     <div>
       <h4>Contacto</h4>
       <a href="https://wa.me/5490000000000" target="_blank">WhatsApp</a>
-      <a href="mailto:hola@verdevivo.com">hola@verdevivo.com</a>
+      <a href="mailto:hola@wolkinsgreenhouse.com">hola@wolkinsgreenhouse.com</a>
       <div class="socials"><a href="#">Instagram</a><a href="#">Facebook</a></div>
     </div>
   </div>
   <div class="footer-bottom container">
-    <p>© 2026 VerdeVivo Growshop. Venta exclusiva a mayores de 18 años.</p>
+    <p>© 2026 Wolkins GreenHouse. Venta exclusiva a mayores de 18 años.</p>
   </div>
 </footer>
 
@@ -186,11 +196,12 @@
   <div class="cart-items" id="cartItems"></div>
   <div class="cart-footer">
     <div class="cart-total"><span>Total</span><strong id="cartTotal">$0</strong></div>
-    <a href="https://wa.me/5490000000000" target="_blank" class="btn btn-primary btn-block">Finalizar compra</a>
+    <a href="https://wa.me/5490000000000" target="_blank" class="btn btn-primary btn-block">Finalizar compra por WhatsApp</a>
     <p class="cart-note">Envío gratis desde $40.000</p>
   </div>
 </aside>
 
+<script src="products-data.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
